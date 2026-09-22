@@ -1,72 +1,128 @@
-// ==========================================================================
-// Mariam Hegeb — Portfolio
-// Handles: the letter-by-letter name reveal, photo uploads into slide
-// slots, and the grease-pencil "pick" mark.
-// ==========================================================================
+/* -------------------------
+   CUSTOM CURSOR
+------------------------- */
 
-(function () {
-  'use strict';
+const cursor = document.querySelector(".cursor");
 
-  // ---- header name reveal ---------------------------------------------
+document.addEventListener("mousemove", function(event) {
 
-  var nameEl = document.getElementById('displayName');
+    cursor.style.left = event.clientX + "px";
+    cursor.style.top = event.clientY + "px";
 
-  if (nameEl) {
-    var fullText = nameEl.textContent;
-    nameEl.setAttribute('aria-label', fullText);
-    nameEl.textContent = '';
+});
 
-    var wrapper = document.createElement('span');
-    wrapper.setAttribute('aria-hidden', 'true');
 
-    Array.prototype.forEach.call(fullText, function (ch, i) {
-      var letter = document.createElement('span');
-      letter.className = 'letter';
-      letter.style.setProperty('--i', i);
-      letter.textContent = ch === ' ' ? '\u00A0' : ch;
-      wrapper.appendChild(letter);
+/* -------------------------
+   IMAGE HOVER
+------------------------- */
+
+const images = document.querySelectorAll("img");
+
+images.forEach(function(image) {
+
+    image.addEventListener("mouseenter", function() {
+        cursor.classList.add("large");
     });
 
-    nameEl.appendChild(wrapper);
-  }
-
-  // ---- photo uploads ------------------------------------------------------
-
-  var slides = document.querySelectorAll('[data-slide]');
-
-  slides.forEach(function (slide) {
-    var input = slide.querySelector('[data-upload]');
-    var drop = slide.querySelector('.drop');
-    var clearBtn = slide.querySelector('[data-clear]');
-    var pickBtn = slide.querySelector('[data-pick]');
-
-    input.addEventListener('change', function () {
-      var file = input.files && input.files[0];
-      if (!file) return;
-
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        drop.style.backgroundImage = 'url(' + e.target.result + ')';
-        slide.classList.add('has-photo');
-      };
-      reader.readAsDataURL(file);
+    image.addEventListener("mouseleave", function() {
+        cursor.classList.remove("large");
     });
 
-    clearBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      drop.style.backgroundImage = '';
-      slide.classList.remove('has-photo');
-      input.value = '';
+});
+
+
+/* -------------------------
+   PARALLAX HERO IMAGE
+------------------------- */
+
+const heroImage = document.querySelector(".hero-image");
+
+document.addEventListener("mousemove", function(event) {
+
+    if (!heroImage) return;
+
+    const x =
+        (event.clientX / window.innerWidth - 0.5) * 2;
+
+    const y =
+        (event.clientY / window.innerHeight - 0.5) * 2;
+
+    heroImage.style.transform =
+        `translate(${x * 12}px, ${y * 12}px)`;
+
+});
+
+
+/* -------------------------
+   HERO TITLE MOVEMENT
+------------------------- */
+
+const heroTitle = document.querySelector(".hero-title");
+
+window.addEventListener("scroll", function() {
+
+    const scroll = window.scrollY;
+
+    if (heroTitle) {
+
+        heroTitle.style.transform =
+            `translateX(${scroll * 0.04}px)`;
+
+    }
+
+});
+
+
+/* -------------------------
+   SCROLL REVEAL
+------------------------- */
+
+const cards = document.querySelectorAll(
+    ".layer-card, .question"
+);
+
+const observer = new IntersectionObserver(
+
+    function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.15
+    }
+
+);
+
+
+cards.forEach(function(card) {
+
+    observer.observe(card);
+
+});
+
+
+/* -------------------------
+   QUESTION INTERACTION
+------------------------- */
+
+const questions = document.querySelectorAll(".question");
+
+questions.forEach(function(question) {
+
+    question.addEventListener("click", function() {
+
+        question.classList.toggle("selected");
+
     });
 
-    // ---- grease-pencil pick mark -----------------------------------------
-
-    pickBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var isPicked = slide.classList.toggle('is-picked');
-      pickBtn.setAttribute('aria-pressed', String(isPicked));
-    });
-  });
-})();
+});

@@ -1,107 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mariam Hegeb — Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Adobe Fonts (Typekit) — Beatle. Only works on domains added to your
-     Adobe Fonts project (or on localhost/file:// for preview). -->
-<link rel="stylesheet" href="https://use.typekit.net/jyu1pnr.css">
-<!-- Google Fonts — body + alternate display options for the font switcher -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap">
+    <title>ANACOSTIA / BETWEEN CITY & RIVER</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="hero">
-  <div class="hero-inner">
-    <h1 class="name" id="displayName">Mariam Hegeb</h1>
-    <p class="role">photographer &amp; visual artist</p>
-  </div>
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor"></div>
 
-</header>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>Available for bookings&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Prints on request&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Limited edition prints&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
-    <span>Available for bookings&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Prints on request&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Limited edition prints&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
-  </div>
-</div>
+    <!-- NAVIGATION -->
 
-<main>
-  <section class="sheet" id="sheet">
-    <div class="slide slide--a" data-slide>
-      <button class="pick-btn" data-pick aria-label="Mark as pick" aria-pressed="false"></button>
-      <label class="drop">
-        <input type="file" accept="image/*" hidden data-upload>
-        <span class="drop-hint">click to<br>add photo</span>
-        <button class="clear-btn" data-clear aria-label="Remove photo" tabindex="-1">×</button>
-      </label>
-    </div>
-    <div class="slide slide--b" data-slide>
-      <button class="pick-btn" data-pick aria-label="Mark as pick" aria-pressed="false"></button>
-      <label class="drop">
-        <input type="file" accept="image/*" hidden data-upload>
-        <span class="drop-hint">click to<br>add photo</span>
-        <button class="clear-btn" data-clear aria-label="Remove photo" tabindex="-1">×</button>
-      </label>
-    </div>
-    <div class="slide slide--c" data-slide>
-      <button class="pick-btn" data-pick aria-label="Mark as pick" aria-pressed="false"></button>
-      <label class="drop">
-        <input type="file" accept="image/*" hidden data-upload>
-        <span class="drop-hint">click to<br>add photo</span>
-        <button class="clear-btn" data-clear aria-label="Remove photo" tabindex="-1">×</button>
-      </label>
-    </div>
-    <div class="slide slide--d" data-slide>
-      <button class="pick-btn" data-pick aria-label="Mark as pick" aria-pressed="false"></button>
-      <label class="drop">
-        <input type="file" accept="image/*" hidden data-upload>
-        <span class="drop-hint">click to<br>add photo</span>
-        <button class="clear-btn" data-clear aria-label="Remove photo" tabindex="-1">×</button>
-      </label>
-    </div>
-    <div class="slide slide--e" data-slide>
-      <button class="pick-btn" data-pick aria-label="Mark as pick" aria-pressed="false"></button>
-      <label class="drop">
-        <input type="file" accept="image/*" hidden data-upload>
-        <span class="drop-hint">click to<br>add photo</span>
-        <button class="clear-btn" data-clear aria-label="Remove photo" tabindex="-1">×</button>
-      </label>
-    </div>
-    <div class="slide slide--f" data-slide>
-      <button class="pick-btn" data-pick aria-label="Mark as pick" aria-pressed="false"></button>
-      <label class="drop">
-        <input type="file" accept="image/*" hidden data-upload>
-        <span class="drop-hint">click to<br>add photo</span>
-        <button class="clear-btn" data-clear aria-label="Remove photo" tabindex="-1">×</button>
-      </label>
-    </div>
-    <div class="slide slide--g" data-slide>
-      <button class="pick-btn" data-pick aria-label="Mark as pick" aria-pressed="false"></button>
-      <label class="drop">
-        <input type="file" accept="image/*" hidden data-upload>
-        <span class="drop-hint">click to<br>add photo</span>
-        <button class="clear-btn" data-clear aria-label="Remove photo" tabindex="-1">×</button>
-      </label>
-    </div>
-  </section>
+    <nav>
 
-  <section class="about">
-    <h2>about</h2>
-    <p>Write a few lines here about your work, your process, or what you shoot. Keep it short — this is a wall for the photos, not the words.</p>
-  </section>
-</main>
+        <div class="logo">
+            ANACOSTIA<br>
+            <span>WASHINGTON, DC</span>
+        </div>
 
-<footer class="contact">
-  <p class="contact-line">say hello</p>
-  <a class="contact-link" href="mailto:hello@mariamhegeb.com">hello@mariamhegeb.com</a>
-</footer>
+        <div class="nav-links">
+            <a href="#intro">ABOUT</a>
+            <a href="#layers">LAYERS</a>
+            <a href="#observe">OBSERVE</a>
+        </div>
 
-<script src="script.js"></script>
+        <div class="coordinates">
+            38°52' N<br>
+            76°57' W
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-top">
+                <span>URBAN LANDSCAPE STUDY</span>
+                <span>01 / 2026</span>
+            </div>
+
+
+            <div class="hero-title">
+
+                <span class="small-title">THE PARK</span>
+
+                <h1>
+                    BETWEEN
+                    <br>
+                    <i>CITY</i>
+                    <br>
+                    & RIVER
+                </h1>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2000&q=85"
+                    alt="Trees in a park"
+                >
+
+                <div class="image-label">
+                    ANACOSTIA PARK
+                    <br>
+                    WASHINGTON, DC
+                </div>
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+                <div class="scroll">
+                    SCROLL TO EXPLORE
+                    <span>↓</span>
+                </div>
+
+                <p>
+                    A study of movement,
+                    canopy, water, and
+                    everyday life.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTRODUCTION -->
+
+        <section class="intro" id="intro">
+
+            <div class="section-label">
+                02 / INTRODUCTION
+            </div>
+
+
+            <div class="intro-content">
+
+                <h2>
+                    A PARK IS NOT
+                    <br>
+                    <span>EMPTY SPACE.</span>
+                </h2>
+
+                <div class="intro-description">
+
+                    <p class="big-copy">
+                        It is a collection of
+                        relationships.
+                    </p>
+
+                    <p>
+                        People move through it.
+                        Trees change the temperature.
+                        Water defines its edge.
+                        Paths create routines.
+                    </p>
+
+                    <p>
+                        Anacostia Park becomes a
+                        meeting point between the
+                        natural landscape and the
+                        urban environment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LARGE IMAGE -->
+
+        <section class="full-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=85"
+                alt="Forest canopy"
+            >
+
+            <div class="image-overlay">
+
+                <span>CANOPY / 01</span>
+
+                <h2>
+                    SHADE
+                    <br>
+                    CHANGES
+                    <br>
+                    <i>BEHAVIOR.</i>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LAYERS -->
+
+        <section class="layers" id="layers">
+
+            <div class="section-label">
+                03 / THE PARK AS A SYSTEM
+            </div>
+
+
+            <div class="layers-heading">
+
+                <h2>
+                    FOUR
+                    <br>
+                    <i>LAYERS.</i>
+                </h2>
+
+                <p>
+                    Look closely and the park
+                    becomes more complicated.
+                </p>
+
+            </div>
+
+
+            <div class="layer-grid">
+
+
+                <!-- CARD 1 -->
+
+                <article class="layer-card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <div class="card-icon">
+                        ○
+                    </div>
+
+                    <h3>
+                        TREES
+                    </h3>
+
+                    <p>
+                        Canopy creates shade,
+                        changes temperature,
+                        supports wildlife, and
+                        influences where people
+                        choose to stay.
+                    </p>
+
+                    <div class="card-footer">
+                        <span>CANOPY</span>
+                        <span>↗</span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 2 -->
+
+                <article class="layer-card dark">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <div class="card-icon">
+                        ∿
+                    </div>
+
+                    <h3>
+                        WATER
+                    </h3>
+
+                    <p>
+                        The Anacostia River creates
+                        a constantly changing edge
+                        between land and water.
+                    </p>
+
+                    <div class="card-footer">
+                        <span>RIVER</span>
+                        <span>↗</span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 3 -->
+
+                <article class="layer-card">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <div class="card-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        PEOPLE
+                    </h3>
+
+                    <p>
+                        Running, biking, playing,
+                        gathering, fishing, or simply
+                        sitting create different
+                        experiences of the same space.
+                    </p>
+
+                    <div class="card-footer">
+                        <span>ACTIVITY</span>
+                        <span>↗</span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 4 -->
+
+                <article class="layer-card">
+
+                    <div class="card-number">
+                        04
+                    </div>
+
+                    <div class="card-icon">
+                        /
+                    </div>
+
+                    <h3>
+                        MOVEMENT
+                    </h3>
+
+                    <p>
+                        Paths organize the park,
+                        while people create shortcuts,
+                        pauses, and unexpected routes.
+                    </p>
+
+                    <div class="card-footer">
+                        <span>CIRCULATION</span>
+                        <span>↗</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- OBSERVATION -->
+
+        <section class="observe" id="observe">
+
+            <div class="section-label">
+                04 / OBSERVATION
+            </div>
+
+
+            <div class="observe-title">
+
+                <h2>
+                    LOOK
+                    <br>
+                    <i>CLOSER.</i>
+                </h2>
+
+                <p>
+                    The same park can feel
+                    completely different depending
+                    on where you stand.
+                </p>
+
+            </div>
+
+
+            <div class="questions">
+
+
+                <div class="question">
+
+                    <span>01</span>
+
+                    <div>
+                        <h3>
+                            SHADE
+                        </h3>
+
+                        <p>
+                            Do people stay longer in
+                            areas with greater tree
+                            canopy?
+                        </p>
+                    </div>
+
+                    <span class="plus">+</span>
+
+                </div>
+
+
+
+                <div class="question">
+
+                    <span>02</span>
+
+                    <div>
+                        <h3>
+                            OPEN SPACE
+                        </h3>
+
+                        <p>
+                            Do open areas encourage
+                            more movement or more
+                            flexible activities?
+                        </p>
+                    </div>
+
+                    <span class="plus">+</span>
+
+                </div>
+
+
+
+                <div class="question">
+
+                    <span>03</span>
+
+                    <div>
+                        <h3>
+                            PATHS
+                        </h3>
+
+                        <p>
+                            Where do people leave the
+                            designated path?
+                        </p>
+                    </div>
+
+                    <span class="plus">+</span>
+
+                </div>
+
+
+
+                <div class="question">
+
+                    <span>04</span>
+
+                    <div>
+                        <h3>
+                            EDGES
+                        </h3>
+
+                        <p>
+                            What happens where the
+                            park meets the city?
+                        </p>
+                    </div>
+
+                    <span class="plus">+</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FINAL IMAGE -->
+
+        <section class="final-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=2000&q=85"
+                alt="Sunlight through trees"
+            >
+
+            <div class="final-text">
+
+                <span>ANACOSTIA / DC</span>
+
+                <h2>
+                    NOTICE
+                    <br>
+                    WHAT
+                    <br>
+                    <i>CHANGES.</i>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div class="footer-left">
+
+                <h2>
+                    ANACOSTIA
+                    <br>
+                    <i>PARK</i>
+                </h2>
+
+                <p>
+                    A visual study of urban
+                    landscape and everyday life.
+                </p>
+
+            </div>
+
+
+            <div class="footer-right">
+
+                <span>
+                    WASHINGTON, DC
+                </span>
+
+                <span>
+                    2026
+                </span>
+
+                <span>
+                    CANOPY / DC
+                </span>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="sketch.js"></script>
+
 </body>
+
 </html>
