@@ -1,10 +1,34 @@
 // ==========================================================================
 // Mariam Hegeb — Portfolio
-// Handles: photo uploads into slide slots and the grease-pencil "pick" mark.
+// Handles: the letter-by-letter name reveal, photo uploads into slide
+// slots, and the grease-pencil "pick" mark.
 // ==========================================================================
 
 (function () {
   'use strict';
+
+  // ---- header name reveal ---------------------------------------------
+
+  var nameEl = document.getElementById('displayName');
+
+  if (nameEl) {
+    var fullText = nameEl.textContent;
+    nameEl.setAttribute('aria-label', fullText);
+    nameEl.textContent = '';
+
+    var wrapper = document.createElement('span');
+    wrapper.setAttribute('aria-hidden', 'true');
+
+    Array.prototype.forEach.call(fullText, function (ch, i) {
+      var letter = document.createElement('span');
+      letter.className = 'letter';
+      letter.style.setProperty('--i', i);
+      letter.textContent = ch === ' ' ? '\u00A0' : ch;
+      wrapper.appendChild(letter);
+    });
+
+    nameEl.appendChild(wrapper);
+  }
 
   // ---- photo uploads ------------------------------------------------------
 

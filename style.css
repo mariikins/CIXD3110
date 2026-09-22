@@ -84,7 +84,6 @@ a { color: inherit; }
 
 .hero {
   padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 3.5rem) clamp(2.5rem, 5vw, 4rem);
-  border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
 
@@ -106,11 +105,82 @@ a { color: inherit; }
   .name { white-space: normal; }
 }
 
+/* letter-by-letter reveal — a single orchestrated moment on load,
+   not a recurring effect. JS wraps each character in a .letter span. */
+.name .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.55em);
+  animation: letter-rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 0.035s);
+}
+
+@keyframes letter-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name .letter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .role {
   margin: 1.25rem 0 0;
   font-size: 1rem;
   color: var(--ink-soft);
   font-style: italic;
+  opacity: 0;
+  animation: fade-in 0.6s ease forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .role { animation: none; opacity: 1; }
+}
+
+/* ---------------------------------- ticker ---------------------------------- */
+
+.ticker {
+  overflow: hidden;
+  background: var(--pink);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ticker-track {
+  display: inline-flex;
+  width: max-content;
+  animation: ticker-scroll 22s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track span {
+  padding: 0.65rem 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  color: #14040d;
+  white-space: nowrap;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
 }
 
 /* --------------------------------- sheet ---------------------------------- */
